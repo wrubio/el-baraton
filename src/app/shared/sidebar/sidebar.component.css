@@ -1,8 +1,36 @@
 #sidebar {
-    width: 320px;
+    width: 20rem;
     height: 100vh;
     background-color: antiquewhite;
     position: fixed;
+    overflow: hidden;
+}
+
+.sidebar-container {
+    position: relative;
+    padding: 1.25rem;
+}
+
+#sidebar ul {
+    list-style: none;
+    position: absolute;
+    left: 0;
+    top: 2rem;
+    padding: 1.25rem 0;
+    width: 100%;
+}
+
+#sidebar ul li {
+    padding: 0.75rem 1.25rem;
+    cursor: pointer;
+    margin-bottom: 0.125rem;
+}
+
+#sidebar ul li:hover {
+    background-color: aquamarine;
+    -webkit-transition: background-color 0.35s ease-in;
+    -moz-transition: background-color 0.35s ease-in;
+    transition: background-color 0.35s ease-in;
 }
 
 
