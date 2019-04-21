@@ -1,0 +1,49 @@
+#navbar {
+    padding: 0.5rem 1.25rem;
+    background-color: #f9f9f9;
+    position: fixed;
+    width: 100%;
+    left: 0;
+    top: 0;
+    z-index: 10;
+}
+
+.sidebar-button {
+    padding: 0 10px;
+    font-size: 1.25rem;
+    cursor: pointer;
+    /*
+    border: 1px solid #000000;
+    border-radius: 4px;
+    */
+}
+
+.logo-text {
+    color: #E74C3C;
+    font-weight: 500;
+    line-height: 1.2;
+    font-size: 1.25rem;
+}
+
+.flex-v-align {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    height: 100%;
+}
+
+.nv-right-item {
+    text-align: right;
+    padding: 0;
+}
+
+.car-shop {
+    color: #E74C3C;
+    font-size: 1rem;
+    cursor: pointer;
+}
+
+.car-shop i {
+    color: #E74C3C;
+    font-size: 1.5rem;
+}

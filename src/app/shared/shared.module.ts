@@ -4,17 +4,20 @@ import { NgModule } from '@angular/core';
 
 // Componets
 import { SidebarComponent } from './sidebar/sidebar.component';
+import { NavbarComponent } from './navbar/navbar.component';
 
 @NgModule({
   declarations: [
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule
   ],
   exports: [
-    SidebarComponent
+    SidebarComponent,
+    NavbarComponent
   ],
   providers: [],
   bootstrap: []
