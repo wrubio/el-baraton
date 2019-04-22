@@ -9,6 +9,9 @@ import { HomeComponent } from './home/home.component';
 import { PagesRoutes } from './pages.routes';
 import { PagesComponent } from './pages.component';
 
+// Libraries
+import { SlickCarouselModule } from 'ngx-slick-carousel';
+
 @NgModule({
   declarations: [
     HomeComponent,
@@ -17,7 +20,8 @@ import { PagesComponent } from './pages.component';
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
-    PagesRoutes
+    PagesRoutes,
+    SlickCarouselModule
   ],
   exports: [],
   providers: [],

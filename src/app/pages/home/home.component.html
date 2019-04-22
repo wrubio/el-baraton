@@ -3,9 +3,9 @@
     <video #homeVideoHeader autoplay muted loop>
       <source src="./assets/media/videos/home/home.mp4" type="video/mp4">
     </video>
-    <h1 class="d-none d-sm-block d-md-none d-lg-block">SuperVoice</h1>
-    <h2>Encuentra al mejor locutor para tu proyecto</h2>
-    <h2>Es fácil, rápido y moderno</h2>
+    <h1 class="d-none d-sm-block d-md-none d-lg-block">El Baratón</h1>
+    <h2>Encuentra el producto que necesita al mejor precio</h2>
+    <h2>Es fácil, rápido y siempre a tu alcance</h2>
     <!--
     <div class="wp-btn-header">
         <div class="row m-0">
@@ -22,6 +22,130 @@
     </div>
     -->
 </div>
-<div class="bg-gray" style="height: 800px">
-    algo
+<div id="home-container" class="bg-gray">
+    <div class="text-promotion">
+        <h3 class="title-promotion">Productos más vendidos</h3>
+        <div class="big-text">El Baratón</div>
+    </div>
+    <div class="card">
+        <div class="card-body bg-purple">
+            <h5 class="card-title tc-white">Bebidas</h5>
+            <h6 class="card-subtitle mb-2 tc-muted-purple">Productos disponibles</h6>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let drink of drinks" class="slide">
+                    <div class="card card-home mr-3">
+                        <img [src]="drink.img" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ drink.name }}</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-6">{{ drink.price }}</div>
+                                        <div class="col-6 text-right">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <div class="other-products text-center">
+        <div class="op-logo">
+            <img src="../../../assets/media/img/baratonLogo.png" alt="Logo de el baraton">
+        </div>
+        <div class="text-promotion">
+            <h3 class="title-promotion">Nuestros productos destacados</h3>
+            <div class="big-text text-center">El Baratón</div>
+        </div>
+    </div>
+
+    <div class="card">
+        <div class="card-body bg-blue">
+            <h5 class="card-title tc-white">Desayunos</h5>
+            <h6 class="card-subtitle mb-2 tc-muted-blue">Productos disponibles</h6>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let brf of breakfast" class="slide">
+                    <div class="card card-home mr-3">
+                        <img [src]="brf.img" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ brf.name }}</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-6">{{ brf.price }}</div>
+                                        <div class="col-6 text-right">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <div class="mb-5"></div>
+
+    <div class="card">
+        <div class="card-body bg-red">
+            <h5 class="card-title tc-white">Vinos</h5>
+            <h6 class="card-subtitle mb-2 tc-muted-red">Productos disponibles</h6>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let wine of wines" class="slide">
+                    <div class="card card-home mr-3">
+                        <img [src]="wine.img" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ wine.name }}</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-6">{{ wine.price }}</div>
+                                        <div class="col-6 text-right">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
+
+    <div class="mb-5"></div>
+
+    <div class="card">
+        <div class="card-body bg-green">
+            <h5 class="card-title tc-white">Almuerzos</h5>
+            <h6 class="card-subtitle mb-2 tc-muted-green">Productos disponibles</h6>
+            <ngx-slick-carousel class="carousel" #slickModal="slick-carousel" [config]="slideConfig">
+                <div ngxSlickItem *ngFor="let lunch of lunches" class="slide">
+                    <div class="card card-home mr-3">
+                        <img [src]="lunch.img" class="card-img-top" alt="...">
+                        <div class="card-body">
+                            <h5 class="card-title">{{ lunch.name }}</h5>
+                            <ul class="list-group list-group-flush">
+                                <li class="list-group-item">
+                                    <div class="row">
+                                        <div class="col-6">{{ lunch.price }}</div>
+                                        <div class="col-6 text-right">
+                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        </div>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </ngx-slick-carousel>
+        </div>
+    </div>
 </div>

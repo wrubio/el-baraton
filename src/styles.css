@@ -4,5 +4,45 @@
 /* General styles */
 
 .bg-gray {
-    background-color: #F4F6F9;
+    background-color: #e5e5e5;
+}
+
+.bg-purple {
+    background-color: #B680CE;
+}
+
+.bg-blue {
+    background: #3B9FE6;
+}
+
+.bg-green {
+    background: #26C4A2;
+}
+
+.bg-red {
+    background: #D7675A;
+}
+
+.bg-transparent {
+    background: rgba(0, 0, 0, 0.0);
+}
+
+.tc-white {
+    color: #FFFFFF;
+}
+
+.tc-muted-purple {
+    color: #835896;
+}
+
+.tc-muted-blue {
+    color: #2d72a2;
+}
+
+.tc-muted-red {
+    color: #a0443a;
+}
+
+.tc-muted-green {
+    color: #1f9c82;
 }

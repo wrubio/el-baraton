@@ -5,6 +5,7 @@
     position: fixed;
     overflow: hidden;
     color: #FFFFFF;
+    z-index: 2;
 }
 
 .top-hidden {

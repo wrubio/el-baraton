@@ -2,7 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { HttpClientModule } from '@angular/common/http';
 
-import { CategoriesService } from './service.index';
+import { CategoriesService, ProductsService } from './service.index';
 
 @NgModule({
     imports: [
@@ -10,7 +10,8 @@ import { CategoriesService } from './service.index';
         HttpClientModule
     ],
     providers: [
-      CategoriesService
+      CategoriesService,
+      ProductsService
     ],
     declarations: []
 })
