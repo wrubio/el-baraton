@@ -1,6 +1,5 @@
 #navbar {
     padding: 0.5rem 1.25rem;
-    background-color: #f9f9f9;
     position: fixed;
     width: 100%;
     left: 0;
@@ -8,21 +7,27 @@
     z-index: 10;
 }
 
+#logo {
+    width: 190px;
+}
+
+#general-search {
+    width: 50%;
+}
+
 .sidebar-button {
     padding: 0 10px;
     font-size: 1.25rem;
     cursor: pointer;
-    /*
-    border: 1px solid #000000;
-    border-radius: 4px;
-    */
+    color: #FFFFFF;
 }
 
 .logo-text {
-    color: #E74C3C;
-    font-weight: 500;
-    line-height: 1.2;
-    font-size: 1.25rem;
+    /* color: #E74C3C; */
+    color: #FFFFFF;
+    font-weight: 600;
+    line-height: 1.25;
+    font-size: 1.35rem;
 }
 
 .flex-v-align {
@@ -38,12 +43,71 @@
 }
 
 .car-shop {
-    color: #E74C3C;
+    color: #FFFFFF;
     font-size: 1rem;
     cursor: pointer;
 }
 
 .car-shop i {
-    color: #E74C3C;
+    color: #FFFFFF;
     font-size: 1.5rem;
+}
+
+
+/* Small devices (landscape phones, 576px and up) */
+
+@media (min-width: 576px) {}
+
+
+/* Medium devices (tablets, 768px and up) */
+
+@media (min-width: 768px) {
+    #logo {
+        width: 170px;
+    }
+    .sidebar-button {
+        width: 50px;
+    }
+    #general-search {
+        width: 360px;
+    }
+    .nv-right-item {
+        width: calc(100% - 580px);
+    }
+}
+
+
+/* Large devices (desktops, 992px and up) */
+
+@media (min-width: 992px) {
+    #logo {
+        width: 180px;
+    }
+    .sidebar-button {
+        width: 60px;
+    }
+    #general-search {
+        width: 560px;
+    }
+    .nv-right-item {
+        width: calc(100% - 800px);
+    }
+}
+
+
+/* Extra large devices (large desktops, 1200px and up) */
+
+@media (min-width: 1200px) {
+    #logo {
+        width: 200px;
+    }
+    .sidebar-button {
+        width: 70px;
+    }
+    #general-search {
+        width: 560px;
+    }
+    .nv-right-item {
+        width: calc(100% - 830px);
+    }
 }

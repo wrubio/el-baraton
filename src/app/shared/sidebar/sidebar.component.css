@@ -1,9 +1,14 @@
 #sidebar {
     width: 20rem;
     height: 100vh;
-    background-color: antiquewhite;
+    /* background-color: antiquewhite; */
     position: fixed;
     overflow: hidden;
+    color: #FFFFFF;
+}
+
+.top-hidden {
+    height: 56px;
 }
 
 .sb-hidden {
@@ -22,9 +27,10 @@
 
 .sidebar-container {
     position: relative;
-    padding: 4rem 1.25rem 1rem 1.25rem;
+    padding: 1rem 1.25rem 1rem 1.25rem;
     overflow: hidden;
-    border-bottom: 1px solid #9f9f9f;
+    border-bottom: 1px solid #2f2f2f;
+    background-color: rgba(58, 58, 58, 0.81);
 }
 
 #sidebar-info {
@@ -38,10 +44,12 @@
 #sidebar ul {
     list-style: none;
     position: absolute;
+    height: calc(100vh - 109px);
     left: 0;
-    top: 5rem;
-    padding: 1.25rem 0;
+    top: 6.825rem;
+    padding: 0;
     width: 100%;
+    background-color: rgba(73, 74, 74, 0.81);
 }
 
 #sidebar ul li {
@@ -51,11 +59,11 @@
 }
 
 li.level-link {
-    border-bottom: 1px solid #9f9f9f;
+    border-bottom: 1px solid #2f2f2f;
 }
 
 #sidebar ul li:hover {
-    background-color: aquamarine;
+    background-color: rgba(249, 249, 249, 0.18);
     -webkit-transition: background-color 0.35s ease-in;
     -moz-transition: background-color 0.35s ease-in;
     transition: background-color 0.35s ease-in;

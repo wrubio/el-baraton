@@ -9,6 +9,7 @@ import { AppRoutes } from './app.routes';
 
 // Modules
 import { SharedModule } from './shared/shared.module';
+import { PagesModule } from './pages/pages.module';
 
 // Services
 import { ServiceModule } from './services/services.module';
@@ -21,7 +22,8 @@ import { ServiceModule } from './services/services.module';
     BrowserModule,
     AppRoutes,
     SharedModule,
-    ServiceModule
+    ServiceModule,
+    PagesModule
   ],
   providers: [],
   bootstrap: [AppComponent]

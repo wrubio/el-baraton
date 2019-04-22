@@ -1,0 +1,40 @@
+.ParallaxVideo {
+    height: 540px;
+    padding-bottom: 10px;
+    padding-top: 160px;
+    position: relative;
+    background-image: linear-gradient(to left bottom, rgba(0, 0, 0, 0.86), rgba(25, 24, 23, 0.76), #2a282775, #3b3a3794, #4c4d49e0);
+}
+
+.paralla-img {
+    background: url('../../../assets/media/img/home/home-parallax-video.png') repeat;
+    background-color: #e6e6e621;
+    height: 540px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: -998;
+}
+
+.ParallaxVideo video {
+    position: fixed;
+    min-width: 100%;
+    top: 0;
+    z-index: -999;
+}
+
+.ParallaxVideo h1 {
+    color: #fff;
+    font-size: 4rem;
+    font-weight: 700;
+    text-align: center;
+    text-transform: uppercase;
+}
+
+.ParallaxVideo h2 {
+    color: #fff;
+    font-size: 2rem;
+    font-weight: 700;
+    text-align: center;
+}

@@ -1,29 +1,46 @@
 <div id="navbar">
-    <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-12 col-sm-12">
-            <div class="flex-v-align">
-                <span class="sidebar-button mr-4" (click)="showSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></span>
+    <div class="desktop-navbar d-none d-sm-none d-xl-block d-lg-block d-md-block">
+        <div class="flex-v-align">
+            <div class="sidebar-button" (click)="showSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+            <div id="logo" class="flex-v-align">
                 <span><img src="../../../assets/media/img/baratonLogo.png" alt="Logo de el baraton" width="40px"></span>
                 <span class="logo-text ml-2">El Baratón</span>
             </div>
-        </div>
-        <div class="col-xl-7 col-lg-7 d-none d-xl-block d-lg-block">
-            <div class="flex-v-align">
-                <div class="input-group input-group-sm">
-                    <input type="text" class="form-control" aria-label="Sizing example input" aria-describedby="inputGroup-sizing-sm">
-                    <div class="input-group-append">
-                        <button class="btn btn-outline-secondary" type="button" id="button-addon2">
-                        <i class="fa fa-search" aria-hidden="true"></i>
-                    </button>
-                    </div>
+            <div id="general-search" class="input-group input-group-sm">
+                <input type="text" class="form-control" placeholder="Buscador general">
+                <div class="input-group-append">
+                    <button class="btn btn-light border-left pl-3 pr-3" type="button">
+                    <i class="fa fa-search" aria-hidden="true"></i>
+                </button>
                 </div>
             </div>
-        </div>
-        <div class="col-xl-2 col-lg-2 d-none d-xl-block d-lg-block">
-            <div class="nv-right-item">
+            <div class="nv-right-item pr-2">
                 <div class="car-shop">
                     <span class="mr-1">Carrito</span>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                </div>
+            </div>
+        </div>
+    </div>
+    <div class="mobile-navbar d-sm-block d-block d-xl-none d-lg-none d-md-none">
+        <div class="row">
+            <div class="col-3">
+                <div class="flex-v-align">
+                    <div class="sidebar-button" (click)="showSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></div>
+                </div>
+            </div>
+            <div class="col-6">
+                <div id="logo" class="flex-v-align">
+                    <span><img src="../../../assets/media/img/baratonLogo.png" alt="Logo de el baraton" width="40px"></span>
+                    <span class="logo-text ml-2">El Baratón</span>
+                </div>
+            </div>
+            <div class="col-3">
+                <div class="flex-v-align">
+                    <div class="car-shop">
+                        <span class="mr-1">Carrito</span>
+                        <i class="fa fa-shopping-cart" aria-hidden="true"></i>
+                    </div>
                 </div>
             </div>
         </div>
