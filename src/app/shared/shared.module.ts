@@ -5,11 +5,13 @@ import { NgModule } from '@angular/core';
 // Componets
 import { SidebarComponent } from './sidebar/sidebar.component';
 import { NavbarComponent } from './navbar/navbar.component';
+import { FooterComponent } from './footer/footer.component';
 
 @NgModule({
   declarations: [
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   imports: [
     BrowserModule,
@@ -17,7 +19,8 @@ import { NavbarComponent } from './navbar/navbar.component';
   ],
   exports: [
     SidebarComponent,
-    NavbarComponent
+    NavbarComponent,
+    FooterComponent
   ],
   providers: [],
   bootstrap: []

@@ -1,0 +1,22 @@
+.footer-container {
+    background-color: #41494C;
+    height: auto;
+    color: #FFFFFF;
+    width: 100%;
+    position: relative;
+    z-index: 1;
+}
+
+.back-top {
+    cursor: pointer;
+}
+
+.container-footer-info {
+    margin: 0 0;
+    background-color: #525d61;
+    padding: 1.25rem;
+}
+
+.container-footer-info p {
+    margin-bottom: 0;
+}
