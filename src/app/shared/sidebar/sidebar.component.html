@@ -13,7 +13,7 @@
         </div>
     </div>
     <ul *ngIf="showCategory === 0" [@enter] [@leave]>
-        <li *ngFor="let category of categories" (click)="findSublevels($event.target)" [attr.data-nameCategory]="category.name">
+        <li *ngFor="let category of categories" (click)="findSublevels($event.target)" [attr.data-nameCategory]="category.name" [attr.data-levelID]="category.id">
             <div class="row">
                 <div class="col-10"><span class="mr-1"><i [class]="category.icon" aria-hidden="true"></i></span> {{ category.name }}</div>
                 <div class="col-2 text-right">
@@ -23,8 +23,10 @@
         </li>
     </ul>
     <ul *ngIf="showCategory === 1" [@enter] [@leave]>
-        <li class="level-link"><i class="fa fa-hand-pointer-o mr-1" aria-hidden="true"></i> Ver resultados de {{ nameCategory }}</li>
-        <li *ngFor="let level of subLevels" (click)="findSublevels($event.target)" [attr.data-nameCategory]="level.name">
+        <li class="level-link" (click)="showLevelItems($event.target)" [attr.data-nameCategory]="nameLevel" [attr.data-levelID]="levelID">
+            <i class="fa fa-hand-pointer-o mr-1" aria-hidden="true"></i> Ver resultados de {{ nameLevel }}
+        </li>
+        <li *ngFor="let level of subLevels" (click)="findSublevels($event.target)" [attr.data-nameCategory]="level.name" [attr.data-levelID]="level.id">
             <div class="row">
                 <div class="col-10"><span class="mr-1"><i [class]="level.icon" aria-hidden="true"></i></span> {{ level.name }}</div>
                 <div class="col-2 text-right">
@@ -34,8 +36,10 @@
         </li>
     </ul>
     <ul *ngIf="showCategory === 2" [@enter] [@leave]>
-        <li class="level-link"><i class="fa fa-hand-pointer-o mr-1" aria-hidden="true"></i> Ver resultados de {{ nameCategory }}</li>
-        <li *ngFor="let level of subLevels" (click)="findSublevels($event.target)" [attr.data-nameCategory]="level.name">
+        <li class="level-link" (click)="showLevelItems($event.target)" [attr.data-nameCategory]="nameLevel" [attr.data-levelID]="levelID">
+            <i class="fa fa-hand-pointer-o mr-1" aria-hidden="true"></i> Ver resultados de {{ nameLevel }}
+        </li>
+        <li *ngFor="let level of subLevels" (click)="findSublevels($event.target)" [attr.data-nameCategory]="level.name" [attr.data-levelID]="level.id">
             <div class="row">
                 <div class="col-10"><span class="mr-1"><i [class]="level.icon" aria-hidden="true"></i></span> {{ level.name }}</div>
                 <div class="col-2 text-right">

@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { Router, NavigationStart } from '@angular/router';
 
 @Component({
   selector: 'app-navbar',
@@ -7,7 +8,17 @@ import { Component, OnInit } from '@angular/core';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor() { }
+  constructor(private router: Router) {
+    this.router.events.subscribe((event: any) => {
+      if (event instanceof NavigationStart) {
+        if (event.url !== '/home') {
+          document.getElementById('navbar').classList.add('bg-navbar');
+        } else {
+          document.getElementById('navbar').classList.remove('bg-navbar');
+        }
+      }
+    });
+  }
 
   ngOnInit() {
   }

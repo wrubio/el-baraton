@@ -1,4 +1,5 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
+import { Router } from '@angular/router';
 import { CategoriesService } from 'src/app/services/service.index';
 import { slideOutLeftOnLeaveAnimation, slideInRightOnEnterAnimation } from 'angular-animations';
 
@@ -11,7 +12,7 @@ import { slideOutLeftOnLeaveAnimation, slideInRightOnEnterAnimation } from 'angu
     slideInRightOnEnterAnimation({ anchor: 'enter', duration: 400, delay: 100})
   ]
 })
-export class SidebarComponent implements OnInit {
+export class SidebarComponent implements OnInit, OnDestroy {
 
   subsCategories: any;
   categories: any;
@@ -19,8 +20,10 @@ export class SidebarComponent implements OnInit {
   showCategory: number;
   arrayCategory: any;
   nameCategory: string;
+  levelID: string;
+  nameLevel: string;
 
-  constructor(public serviceCategories: CategoriesService) {
+  constructor(public serviceCategories: CategoriesService, private router: Router) {
     this.subsCategories = this.serviceCategories.getCategories().subscribe((result: any) => {
       this.categories = result.categories;
     });
@@ -31,10 +34,14 @@ export class SidebarComponent implements OnInit {
     this.showCategory = 0;
   }
 
-  hasSublevels(levelShow: number) {
+  hasSublevels(levelShow: number, e: HTMLElement) {
     if (this.arrayCategory[0].sublevels !== undefined) {
       this.subLevels = this.arrayCategory[0].sublevels;
+      this.levelID = e.getAttribute('data-levelID');
+      this.nameLevel = e.getAttribute('data-nameCategory');
       this.showCategory = levelShow;
+    } else {
+      this.showLevelItems(e);
     }
   }
 
@@ -47,13 +54,23 @@ export class SidebarComponent implements OnInit {
     if (this.showCategory === 0) {
       this.arrayCategory = this.categories.filter((c: any) => c.name === this.nameCategory);
       levelShow = 1;
-      this.hasSublevels(levelShow);
+      this.hasSublevels(levelShow, liElement);
     } else {
       this.arrayCategory = this.subLevels.filter((c: any) => c.name === this.nameCategory);
       levelShow = this.showCategory === 1 ? 2 : 1;
-      this.hasSublevels(levelShow);
+      this.hasSublevels(levelShow, liElement);
     }
 
   }
 
+  showLevelItems(e: HTMLElement) {
+    const levelID = e.getAttribute('data-levelID');
+    let nameCategoty = e.getAttribute('data-nameCategory').replace(/\s+/g, '');
+    nameCategoty = nameCategoty.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
+    this.router.navigate([`/category/${nameCategoty}&sublevel${levelID}`]);
+  }
+
+  ngOnDestroy() {
+    this.subsCategories.unsubscribe();
+  }
 }

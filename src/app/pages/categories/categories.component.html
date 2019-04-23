@@ -1,0 +1,29 @@
+<div class="category-container bg-gray">
+    <div class="total-items">
+        1-24 of 538 results for Electronics : "sdd"
+    </div>
+    <div class="row">
+        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 border-right-1">
+            <h5>Flitrar por:</h5>
+            <div class="form-group form-check">
+                <input type="checkbox" name="disponibility" (change)="checkDisponibility($event.target.checked)" class="form-check-input">
+                <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
+            </div>
+            <div class="form-group form-check">
+                <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
+            </div>
+        </div>
+        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-xs-12">
+            <div class="card" style="width: 18rem;">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngFor="let product of categoryProducts">{{ product.name }}</li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>

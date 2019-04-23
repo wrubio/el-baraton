@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, OnDestroy } from '@angular/core';
 import { ProductsService } from '../../services/products/products.service';
 
 @Component({
@@ -6,7 +6,7 @@ import { ProductsService } from '../../services/products/products.service';
   templateUrl: './home.component.html',
   styleUrls: ['./home.component.css']
 })
-export class HomeComponent implements OnInit {
+export class HomeComponent implements OnInit, OnDestroy {
 
   subsProducts: any;
   products: any;
@@ -37,7 +37,6 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    console.log(this.drinks);
   }
 
   getBreakfast() {
@@ -48,7 +47,6 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    console.log(this.breakfast);
   }
 
   getLunches() {
@@ -59,7 +57,6 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    console.log(this.lunches);
   }
 
   getWines() {
@@ -70,6 +67,9 @@ export class HomeComponent implements OnInit {
         }
       }
     });
-    console.log(this.wines);
+  }
+
+  ngOnDestroy() {
+    this.subsProducts.unsubscribe();
   }
 }

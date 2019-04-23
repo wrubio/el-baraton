@@ -1,5 +1,6 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
 // Componets
@@ -11,17 +12,20 @@ import { PagesComponent } from './pages.component';
 
 // Libraries
 import { SlickCarouselModule } from 'ngx-slick-carousel';
+import { CategoriesComponent } from './categories/categories.component';
 
 @NgModule({
   declarations: [
     HomeComponent,
-    PagesComponent
+    PagesComponent,
+    CategoriesComponent
   ],
   imports: [
     BrowserModule,
     BrowserAnimationsModule,
     PagesRoutes,
-    SlickCarouselModule
+    SlickCarouselModule,
+    FormsModule
   ],
   exports: [],
   providers: [],
