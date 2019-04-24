@@ -8,19 +8,10 @@ import { Router, NavigationStart } from '@angular/router';
 })
 export class NavbarComponent implements OnInit {
 
-  constructor(private router: Router) {
-    this.router.events.subscribe((event: any) => {
-      if (event instanceof NavigationStart) {
-        if (event.url !== '/home') {
-          document.getElementById('navbar').classList.add('bg-navbar');
-        } else {
-          document.getElementById('navbar').classList.remove('bg-navbar');
-        }
-      }
-    });
-  }
+  constructor(private router: Router) {}
 
   ngOnInit() {
+    document.getElementById('navbar').classList.add('bg-navbar');
   }
 
   showSidebar() {
@@ -32,5 +23,13 @@ export class NavbarComponent implements OnInit {
       sidebar.classList.remove('sb-hidden');
       sidebar.classList.add('sb-show');
     }
+  }
+
+  home(e: HTMLElement) {
+    this.router.navigate(['/home']);
+  }
+
+  shoppingCar() {
+    this.router.navigate(['/shoppingCard']);
   }
 }

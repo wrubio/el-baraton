@@ -1,28 +1,94 @@
-<div class="category-container bg-gray">
-    <div class="total-items">
-        1-24 of 538 results for Electronics : "sdd"
-    </div>
-    <div class="row">
-        <div class="col-xl-3 col-lg-3 col-md-4 col-sm-12 col-xs-12 border-right-1">
+<div class="pages-container bg-gray">
+    <div class="row main-row-categoty">
+        <div class="col-xl-3 col-lg-4 col-md-4 col-sm-12 col-xs-12 border-right-1 col-border-right">
+            <div class="pt-3"></div>
             <h5>Flitrar por:</h5>
+            <hr>
+            <h6>Disponibilidad</h6>
             <div class="form-group form-check">
                 <input type="checkbox" name="disponibility" (change)="checkDisponibility($event.target.checked)" class="form-check-input">
                 <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
             </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
-            </div>
-            <div class="form-group form-check">
-                <input type="checkbox" class="form-check-input" id="exampleCheck1">
-                <label class="form-check-label" for="exampleCheck1">Disponibilidad</label>
-            </div>
+            <hr>
+            <h6>Precio:</h6>
+            <form ngNativeValidate #f="ngForm" (ngSubmit)="priceRange(f)">
+                <div class="row row-filter">
+                    <div class="col">
+                        <input ngModel name="min" type="number" class="form-control" placeholder="$ Min" required>
+                    </div>
+                    <div class="col">
+                        <input ngModel name="max" type="number" class="form-control" placeholder="$ Max" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </div>
+                </div>
+            </form>
+            <hr>
+            <h6>Cantidad En Stock:</h6>
+            <form ngNativeValidate #q="ngForm" (ngSubmit)="quantityRange(q)">
+                <div class="row row-filter">
+                    <div class="col">
+                        <input ngModel name="min" type="number" class="form-control" placeholder="$ Min" required>
+                    </div>
+                    <div class="col">
+                        <input ngModel name="max" type="number" class="form-control" placeholder="$ Max" required>
+                    </div>
+                    <div class="col">
+                        <button type="submit" class="btn btn-primary">Filtrar</button>
+                    </div>
+                </div>
+            </form>
         </div>
-        <div class="col-xl-9 col-lg-9 col-md-8 col-sm-12 col-xs-12">
-            <div class="card" style="width: 18rem;">
+
+
+        <div class="col-xl-9 col-lg-8 col-md-8 col-sm-12 col-xs-12">
+
+            <div class="d-sm-block d-block d-xl-none d-lg-none d-md-none">
+                <hr>
+            </div>
+
+            <div class="card bg-gray card-product">
+
+                <div class="order-button card-header">
+                    <button (click)="priceLow($event)" type="button" class="btn btn-secondary btn-sm">Precio: <i class="fa fa-long-arrow-up" aria-hidden="true"></i><i class="fa fa-long-arrow-down" aria-hidden="true"></i></button>
+                    <button (click)="priceHigh($event)" type="button" class="btn btn-secondary btn-sm">Precio: <i class="fa fa-long-arrow-down" aria-hidden="true"></i><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>
+                    <button (click)="available($event)" type="button" class="btn btn-secondary btn-sm">Disponible</button>
+                    <button (click)="quantityLow($event)" type="button" class="btn btn-secondary btn-sm">Cantidad: <i class="fa fa-long-arrow-up" aria-hidden="true"></i><i class="fa fa-long-arrow-down" aria-hidden="true"></i></button>
+                    <button (click)="quantityHigh($event)" type="button" class="btn btn-secondary btn-sm">Cantidad: <i class="fa fa-long-arrow-down" aria-hidden="true"></i><i class="fa fa-long-arrow-up" aria-hidden="true"></i></button>
+                </div>
+
+                <form ngNativeValidate #s="ngForm" (ngSubmit)="findElement(s)">
+                    <div id="general-search" class="input-group input-group-sm pb-3">
+                        <input ngModel name="searchProduct" type="text" class="form-control" placeholder="Buscar producto">
+                        <div class="input-group-append">
+                            <button class="btn btn-secondary pl-3 pr-3" type="submit">
+                              <i class="fa fa-search" aria-hidden="true"></i> Buscar
+                            </button>
+                        </div>
+                    </div>
+                </form>
+
                 <ul class="list-group list-group-flush">
-                    <li class="list-group-item" *ngFor="let product of categoryProducts">{{ product.name }}</li>
+                    <li class="list-group-item" *ngFor="let product of (categoryProducts | disponibility: avail | price: price | quantity: quantity | search: search) as result; let i = index">
+                        <div id="afterPipe" class="d-none" *ngIf="i === 0">{{ strinJson.stringify(result) }} </div>
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                                <div class="product-img">
+                                    <img [src]="product.img" alt="img">
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-8 col-md-7 col-sm-12 col-xs-12">
+                                <h6><b>Nombre</b>: {{ product.name }}</h6>
+                                <h6><b>Precio</b>: {{ product.price }}</h6>
+                                <h6><b>Disponibilidad</b>: {{ product.available }}</h6>
+                                <h6><b>Stock</b>: {{ product.quantity }}</h6>
+                                <button type="button" [attr.data-id]="product.id" (click)="buyProduct($event.target)" class="btn btn-danger">Comprar</button>
+                            </div>
+                        </div>
+                    </li>
                 </ul>
+
             </div>
         </div>
     </div>

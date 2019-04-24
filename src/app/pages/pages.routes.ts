@@ -5,6 +5,7 @@ import { Component } from '@angular/core';
 import { PagesComponent } from './pages.component';
 import { HomeComponent } from './home/home.component';
 import { CategoriesComponent } from './categories/categories.component';
+import { ShoppingCarComponent } from './shopping-car/shopping-car.component';
 
 
 const pagesRoutes: Routes = [
@@ -13,6 +14,7 @@ const pagesRoutes: Routes = [
         children: [
             { path: 'home', component: HomeComponent },
             { path: 'category/:id', component: CategoriesComponent },
+            { path: 'shoppingCard', component: ShoppingCarComponent },
             { path: '', redirectTo: '/home', pathMatch: 'full' }
         ]
     }

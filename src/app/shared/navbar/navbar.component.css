@@ -73,7 +73,7 @@
         width: 360px;
     }
     .nv-right-item {
-        width: calc(100% - 580px);
+        width: calc(100% - 220px);
     }
 }
 
@@ -91,7 +91,7 @@
         width: 560px;
     }
     .nv-right-item {
-        width: calc(100% - 800px);
+        width: calc(100% - 240px);
     }
 }
 
@@ -109,6 +109,6 @@
         width: 560px;
     }
     .nv-right-item {
-        width: calc(100% - 830px);
+        width: calc(100% - 270px);
     }
 }

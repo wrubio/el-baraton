@@ -65,9 +65,15 @@ export class SidebarComponent implements OnInit, OnDestroy {
 
   showLevelItems(e: HTMLElement) {
     const levelID = e.getAttribute('data-levelID');
+    const sidebar = document.getElementById('sidebar');
+
     let nameCategoty = e.getAttribute('data-nameCategory').replace(/\s+/g, '');
     nameCategoty = nameCategoty.normalize('NFD').replace(/[\u0300-\u036f]/g, '');
     this.router.navigate([`/category/${nameCategoty}&sublevel${levelID}`]);
+
+    sidebar.classList.remove('sb-show');
+    sidebar.classList.add('sb-hidden');
+    this.showCategory = 0;
   }
 
   ngOnDestroy() {

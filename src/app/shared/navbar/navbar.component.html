@@ -2,10 +2,11 @@
     <div class="desktop-navbar d-none d-sm-none d-xl-block d-lg-block d-md-block">
         <div class="flex-v-align">
             <div class="sidebar-button" (click)="showSidebar()"><i class="fa fa-bars" aria-hidden="true"></i></div>
-            <div id="logo" class="flex-v-align" routerLink="/home">
+            <div id="logo" class="flex-v-align" (click)="home($event.target)">
                 <span><img src="../../../assets/media/img/baratonLogo.png" alt="Logo de el baraton" width="40px"></span>
                 <span class="logo-text ml-2">El Baratón</span>
             </div>
+            <!--
             <div id="general-search" class="input-group input-group-sm">
                 <input type="text" class="form-control" placeholder="Buscador general">
                 <div class="input-group-append">
@@ -14,8 +15,9 @@
                 </button>
                 </div>
             </div>
+            -->
             <div class="nv-right-item pr-2">
-                <div class="car-shop">
+                <div class="car-shop" (click)="shoppingCar()">
                     <span class="mr-1">Carrito</span>
                     <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                 </div>
@@ -30,14 +32,14 @@
                 </div>
             </div>
             <div class="col-6">
-                <div id="logo" class="flex-v-align" routerLink="/home">
+                <div id="logo" class="flex-v-align" (click)="home($event.target)">
                     <span><img src="../../../assets/media/img/baratonLogo.png" alt="Logo de el baraton" width="40px"></span>
                     <span class="logo-text ml-2">El Baratón</span>
                 </div>
             </div>
             <div class="col-3">
                 <div class="flex-v-align">
-                    <div class="car-shop">
+                    <div class="car-shop" (click)="shoppingCar()">
                         <span class="mr-1">Carrito</span>
                         <i class="fa fa-shopping-cart" aria-hidden="true"></i>
                     </div>

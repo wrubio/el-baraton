@@ -6,21 +6,6 @@
     <h1 class="d-none d-sm-block d-md-none d-lg-block">El Baratón</h1>
     <h2>Encuentra el producto que necesita al mejor precio</h2>
     <h2>Es fácil, rápido y siempre a tu alcance</h2>
-    <!--
-    <div class="wp-btn-header">
-        <div class="row m-0">
-            <div class="d-none d-sm-block col-sm-4 col-md-4 col-xl-4 hidden-xs-down text-right">
-                <button (click)="scroll(target)" type="button" class="btn btn-outline-light"><i class="fa fa-volume-up" aria-hidden="true"></i> Ejemplos</button>
-            </div>
-            <div class="d-none d-sm-block col-sm-4 col-md-4 col-xl-4 hidden-xs-down text-center">
-                <button [routerLink]="['/contest']" type="button" class="btn btn-outline-light"><i class="fa fa-trophy" aria-hidden="true"></i> Crear concurso</button>
-            </div>
-            <div class="d-none d-sm-block col-sm-4 col-md-4 col-xl-4 hidden-xs-down text-left">
-                <button [routerLink]="['/register']" type="button" class="btn btn-outline-light"><i class="fa fa-user-plus" aria-hidden="true"></i> Registrarse</button>
-            </div>
-        </div>
-    </div>
-    -->
 </div>
 <div id="home-container" class="bg-gray">
     <div class="text-promotion">
@@ -38,11 +23,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ drink.name }}</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
+                                <li class="list-group-item pl-0 pr-0">
                                     <div class="row">
-                                        <div class="col-6">{{ drink.price }}</div>
-                                        <div class="col-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 col-xs-5">{{ drink.price }}</div>
+                                        <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 col-xs-7 text-right">
+                                            <button type="button" [attr.data-id]="drink.id" (click)="buyProduct($event.target)" class="btn btn-primary btn-sm btn-block">Comprar</button>
                                         </div>
                                     </div>
                                 </li>
@@ -75,11 +60,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ brf.name }}</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
+                                <li class="list-group-item pl-0 pr-0">
                                     <div class="row">
-                                        <div class="col-6">{{ brf.price }}</div>
-                                        <div class="col-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 col-xs-5">{{ brf.price }}</div>
+                                        <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 col-xs-7 text-right">
+                                            <button type="button" [attr.data-id]="brf.id" (click)="buyProduct($event.target)" class="btn btn-primary btn-sm btn-block">Comprar</button>
                                         </div>
                                     </div>
                                 </li>
@@ -104,11 +89,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ wine.name }}</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
+                                <li class="list-group-item pl-0 pr-0">
                                     <div class="row">
-                                        <div class="col-6">{{ wine.price }}</div>
-                                        <div class="col-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 col-xs-5">{{ wine.price }}</div>
+                                        <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 col-xs-7 text-right">
+                                            <button type="button" [attr.data-id]="wine.id" (click)="buyProduct($event.target)" class="btn btn-primary btn-sm btn-block">Comprar</button>
                                         </div>
                                     </div>
                                 </li>
@@ -133,11 +118,11 @@
                         <div class="card-body">
                             <h5 class="card-title">{{ lunch.name }}</h5>
                             <ul class="list-group list-group-flush">
-                                <li class="list-group-item">
+                                <li class="list-group-item pl-0 pr-0">
                                     <div class="row">
-                                        <div class="col-6">{{ lunch.price }}</div>
-                                        <div class="col-6 text-right">
-                                            <button type="button" class="btn btn-primary btn-sm btn-block">Comprar</button>
+                                        <div class="col-xl-6 col-lg-5 col-md-5 col-sm-5 col-xs-5">{{ lunch.price }}</div>
+                                        <div class="col-xl-6 col-lg-7 col-md-7 col-sm-7 col-xs-7 text-right">
+                                            <button type="button" [attr.data-id]="lunch.id" (click)="buyProduct($event.target)" class="btn btn-primary btn-sm btn-block">Comprar</button>
                                         </div>
                                     </div>
                                 </li>

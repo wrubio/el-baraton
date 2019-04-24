@@ -1,7 +1,7 @@
 .ParallaxVideo {
-    height: 540px;
+    height: 330px;
     padding-bottom: 10px;
-    padding-top: 160px;
+    padding-top: 100px;
     position: relative;
     background-image: linear-gradient(to left bottom, rgba(0, 0, 0, 0.86), rgba(25, 24, 23, 0.76), #2a282775, #3b3a3794, #4c4d49e0);
 }
@@ -41,6 +41,7 @@
 
 #home-container {
     padding: 1.25rem;
+    padding-bottom: 138px;
 }
 
 
@@ -48,12 +49,12 @@
 
 .text-promotion {
     position: relative;
-    padding-top: 5rem;
+    padding-top: 3rem;
     height: 144px;
 }
 
 .big-text {
-    font-size: 6rem;
+    font-size: 4.5rem;
     font-weight: 800;
     color: rgba(214, 214, 214, 0.91);
     position: absolute;
@@ -71,9 +72,13 @@
 
 /* OTHERS PRODUCTS STYLES */
 
-.other-products {}
+.other-products {
+    padding: 4rem 0;
+}
 
-.op-logo img {}
+.op-logo img {
+    width: 30%;
+}
 
 
 /* CARDS HOME STYLES */
@@ -91,22 +96,102 @@
 
 /* Small devices (landscape phones, 576px and up) */
 
-@media (min-width: 576px) {}
+@media (min-width: 576px) {
+    .ParallaxVideo {
+        height: 330px;
+        padding-top: 100px;
+    }
+    .card-home .card-body {
+        background-color: #ececec;
+    }
+    .card-home ul li {
+        padding: 1rem 0 0 0;
+        background-color: #ececec;
+    }
+    .other-products {
+        padding: 4rem 0;
+    }
+    .op-logo img {
+        width: 20%;
+    }
+    .big-text {
+        font-size: 6rem;
+    }
+    .text-promotion {
+        padding-top: 3rem;
+    }
+}
 
 
 /* Medium devices (tablets, 768px and up) */
 
-@media (min-width: 768px) {}
+@media (min-width: 768px) {
+    .ParallaxVideo {
+        height: 430px;
+        padding-top: 160px;
+    }
+    .card-home .card-body {
+        background-color: #ececec;
+    }
+    .card-home ul li {
+        padding: 1rem 0 0 0;
+        background-color: #ececec;
+    }
+    .other-products {
+        padding: 4rem 0;
+    }
+    .op-logo img {
+        width: 20%;
+    }
+    .big-text {
+        font-size: 6rem;
+    }
+    .text-promotion {
+        padding-top: 5rem;
+    }
+}
 
 
 /* Large devices (desktops, 992px and up) */
 
-@media (min-width: 992px) {}
+@media (min-width: 992px) {
+    .ParallaxVideo {
+        height: 540px;
+        padding-top: 160px;
+    }
+    .card-home img {
+        width: 100%;
+        max-height: 200px;
+    }
+    .card-home .card-body {
+        background-color: #ececec;
+    }
+    .card-home ul li {
+        padding: 1rem 0 0 0;
+        background-color: #ececec;
+    }
+    .other-products {
+        padding: 4rem 0;
+    }
+    .op-logo img {
+        width: 15%;
+    }
+    .big-text {
+        font-size: 6rem;
+    }
+    .text-promotion {
+        padding-top: 5rem;
+    }
+}
 
 
 /* Extra large devices (large desktops, 1200px and up) */
 
 @media (min-width: 1200px) {
+    .ParallaxVideo {
+        height: 540px;
+        padding-top: 160px;
+    }
     .card-home img {
         width: 100%;
         max-height: 200px;
@@ -123,5 +208,11 @@
     }
     .op-logo img {
         width: 10%;
+    }
+    .big-text {
+        font-size: 6rem;
+    }
+    .text-promotion {
+        padding-top: 4.95rem;
     }
 }

@@ -1,0 +1,70 @@
+<div class="pages-container bg-gray pb-4">
+    <div class="loader" *ngIf="showLoader">
+        <div class="flex-loader">
+            <div class="loader-icon"><i class="fa fa-spinner fa-pulse fa-3x fa-fw"></i></div>
+            <div class="loader-tex">Realizando transacción...</div>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-xl-9 col-lg-8 col-md-7 col-sm-12 col-xs-12">
+            <div class="card bg-gray card-product mt-4 pb-0">
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item" *ngIf="totalItem === 0">No hay productos en su carrito.</li>
+                    <li class="list-group-item" *ngFor="let product of products">
+                        <div class="row">
+                            <div class="col-xl-2 col-lg-4 col-md-5 col-sm-12 col-xs-12">
+                                <div class="product-img">
+                                    <img [src]="product.img" alt="img">
+                                </div>
+                            </div>
+                            <div class="col-xl-10 col-lg-8 col-md-7 col-sm-12 col-xs-12">
+                                <h6><b>Nombre</b>: {{ product.name }}</h6>
+                                <h6><b>Precio</b>: {{ product.price }}</h6>
+                                <h6><b>Disponibilidad</b>: {{ product.available }}</h6>
+                                <h6><b>Stock</b>: {{ product.quantity }}</h6>
+                                <div class="row">
+                                    <div class="col-xl-4 col-lg-8 col-md-12 col-sm-12 col-xs-12">
+                                        <div class="form-group row">
+                                            <label class="col-xl-5 col-lg-5 col-md-12 col-sm-12 col-xs-12 col-form-label">Cantidad: </label>
+                                            <div class="col-xl-7 col-lg-7 col-md-12 col-sm-12 col-xs-12">
+                                                <div class="input-group">
+                                                    <input type="number" name="quantity" [attr.data-itemID]="product.id" class="form-control form-control-sm input-number" [value]="product.total" disabled>
+                                                    <div class="input-group-append">
+                                                        <button type="button" data-event="down" class="input-group-text btn btn-secundary btn-sm" (click)="setValue($event.target)">
+                                                            <i class="fa fa-angle-down" aria-hidden="true"></i>
+                                                        </button>
+                                                        <button type="button" data-event="up" class="input-group-text btn btn-secundary btn-sm" (click)="setValue($event.target)">
+                                                            <i class="fa fa-angle-up" aria-hidden="true"></i>
+                                                        </button>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-xl-4 col-lg-4 col-md-12 col-sm-12 col-xs-12">
+                                        <button type="button" [attr.data-itemID]="product.id" class="btn btn-danger btn-block btn-sm" (click)="deleteItem($event.target)">Eliminar</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+        </div>
+        <div class="col-xl-3 col-lg-4 col-md-5 col-sm-12 col-xs-12">
+            <div class="card bg-gray card-product mt-4 pb-0">
+                <div class="order-button card-header">
+                    <h6>Información de su pedido</h6>
+                </div>
+                <ul class="list-group list-group-flush">
+                    <li class="list-group-item"><span><b>Total Items:</b> {{ totalItem }}</span></li>
+                    <li class="list-group-item"><span><b>Total: </b> $ <span id="total-cost">{{ totalPrice | number }}</span></span>
+                    </li>
+                    <li class="list-group-item">
+                        <button type="button" class="btn btn-secondary btn-block btn-sm" (click)="confirmation()">Confirmar pedido</button>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
